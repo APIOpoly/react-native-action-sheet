@@ -327,7 +327,7 @@ ActionSheet.defaultProps = {
 
 let TouchableComponent;
 
-TouchableComponent = Platform.Version <= 20 ? TouchableOpacity : TouchableNativeFeedback;
+TouchableComponent = (Platform.Version <= 20 || Platform.OS === 'web') ? TouchableOpacity : TouchableNativeFeedback;
 
 if (TouchableComponent !== TouchableNativeFeedback) {
   TouchableComponent.SelectableBackground = () => ({});

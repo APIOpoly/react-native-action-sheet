@@ -99,7 +99,11 @@ class ActionGroup extends React.Component {
         if (textStyle.color !== undefined && textStyle.color !== null) {
           iconStyle.push({ tintColor: textStyle.color })
         }
-        iconElement = <Image source={icons[i]} resizeMode="contain" style={iconStyle} />;
+        if (typeof icons[i] === 'string') {
+          iconElement = <Image source={icons[i]} resizeMode="contain" style={iconStyle} />;
+        } else if (typeof icons[i] === 'function') {
+          iconElement = icons[i];
+        }
       }
 
       optionViews.push(

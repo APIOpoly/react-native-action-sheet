@@ -101,7 +101,7 @@ class ActionGroup extends React.Component {
         }
         if (typeof icons[i] === 'string') {
           iconElement = <Image source={icons[i]} resizeMode="contain" style={iconStyle} />;
-        } else if (typeof icons[i] === 'function') {
+        } else {
           iconElement = icons[i];
         }
       }

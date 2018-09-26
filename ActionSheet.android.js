@@ -162,7 +162,7 @@ export default class ActionSheet extends React.Component {
     let sheet = isVisible ? this._renderSheet() : null;
 
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, flexBasis: 'auto' }}>
         {React.Children.only(this.props.children)}
         {overlay}
         {sheet}
